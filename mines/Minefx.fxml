@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="Hbox" prefHeight="327.0" prefWidth="160.0" style="-fx-background-color: LIGHTBLUE;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mines.Controller">
+   <children>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="145.0" prefHeight="302.0" prefWidth="140.0" HBox.hgrow="ALWAYS">
+         <children>
+            <StackPane prefHeight="44.0" prefWidth="127.0" style="-fx-border-color: SKYBLUE; -fx-border-width: 2;">
+               <children>
+                  <ImageView fx:id="YouLose" fitHeight="55.0" fitWidth="116.0" opacity="0.0" StackPane.alignment="CENTER">
+                     <image>
+                        <Image url="@YouLose.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="YouWon" fitHeight="64.0" fitWidth="120.0" opacity="0.0" StackPane.alignment="CENTER">
+                     <image>
+                        <Image url="@YouWon.gif" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="tooMany" alignment="CENTER" opacity="0.0" prefHeight="64.0" prefWidth="133.0" text="too many mines" textFill="RED">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emptyFields" opacity="0.0" prefHeight="82.0" prefWidth="161.0" text="one of the fields is empty" textAlignment="CENTER" textFill="RED" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="started" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" text="Started">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="numbersOnly" maxHeight="73.0" maxWidth="135.0" opacity="0.0" prefHeight="73.0" prefWidth="135.0" text="please enter numbers only" textFill="RED" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="negativeNum" opacity="0.0" prefHeight="72.0" prefWidth="140.0" text="no negative numbers allowed" textAlignment="CENTER" textFill="RED" wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane maxHeight="30.0" maxWidth="100.0" prefHeight="30.0" prefWidth="100.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="15.0" top="15.0" />
+               </VBox.margin>
+               <children>
+                  <Label alignment="CENTER" opacity="0.68" prefHeight="29.0" prefWidth="77.0" style="-fx-background-color: black;" text="reset" textFill="WHITE" StackPane.alignment="CENTER_LEFT" />
+                  <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetClicked" opacity="0.0" prefHeight="30.0" prefWidth="78.0" text="reset" StackPane.alignment="CENTER_LEFT">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </StackPane>
+            <HBox prefHeight="100.0" prefWidth="60.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="56.0" spacing="18.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="width">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="height" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="mines" />
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="100.0" maxWidth="63.0" prefHeight="100.0" prefWidth="63.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="width" maxWidth="40.0" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="height" maxWidth="40.0" prefHeight="25.0" prefWidth="22.0" VBox.vgrow="ALWAYS" />
+                        <TextField fx:id="mines" maxWidth="40.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <StackPane maxHeight="150.0" maxWidth="130.0" prefHeight="150.0" prefWidth="200.0" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView StackPane.alignment="CENTER_LEFT">
+                     <image>
+                        <Image url="@flag.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="flagCount" strokeType="OUTSIDE" strokeWidth="0.0" text="0" StackPane.alignment="CENTER">
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+   </children>
+   <opaqueInsets>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</HBox>
